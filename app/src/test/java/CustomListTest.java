@@ -22,16 +22,14 @@ public class CustomListTest {
     }
     @Test
     public void testHasCity(){
-        list.clear();
         City city = new City("Regina", "Saskatchewan");//add in Regina
         City city1 = new City("Vancouver","BC");//don't add Vancouver for false condition
-        list.add(city);
+        list.addCity(city);
         assertTrue(list.hasCity(city));
         assertFalse(list.hasCity(city1));
     }
     @Test
     public void testDelete(){
-        list.clear();
         City city = new City("Vancouver","BC");
         list.deleteCity(city);
         assertEquals(0,list.getCount());
@@ -39,9 +37,8 @@ public class CustomListTest {
     }
     @Test
     public void testCountCities(){
-        list.clear();
         City city = new City("Vancouver","BC");
-        list.add(city);
+        list.addCity(city);
         int cityNum = list.countCities();
         assertEquals(1,cityNum);
     }
